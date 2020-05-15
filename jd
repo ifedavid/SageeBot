@@ -1,0 +1,46 @@
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex b6e4761..305ce08 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -127,3 +127,5 @@[m [mdmypy.json[m
+ [m
+ # Pyre type checker[m
+ .pyre/[m
+[32m+[m
+[32m+[m[32m/"SageeBot"/Config.py[m
+[1mdiff --git a/SageeBot/Config.py b/SageeBot/Config.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8b7dad7[m
+[1m--- /dev/null[m
+[1m+++ b/SageeBot/Config.py[m
+[36m@@ -0,0 +1,30 @@[m
+[32m+[m[32mimport tweepy[m
+[32m+[m[32mimport logging[m
+[32m+[m
+[32m+[m[32mlogger = logging.getLogger()[m
+[32m+[m
+[32m+[m[32mdef CreateApi():[m
+[32m+[m[32m    auth = tweepy.OAuthHandler("6l98ILxOXpZA6ke7SypSxL7uB", "B4ST2pD2pRqubT3uBAYoioHpbuzJCKk8fiIgbhz5nX4pYfSgVz")[m
+[32m+[m
+[32m+[m[32m    auth.set_access_token("1259910095003095040-9VMUb4P7AmDDIN8QsBa1kwfPg6HLiE", "khv1vcTQgC14Jidl8jeRnvATitxKZCIx2YWCncaOYQpXB")[m
+[32m+[m
+[32m+[m[32m    api = tweepy.API(auth, wait_on_rate_limit=True,[m
+[32m+[m[32m        wait_on_rate_limit_notify=True)[m
+[32m+[m
+[32m+[m[32m    try:[m
+[32m+[m[32m        api.verify_credentials()[m
+[32m+[m[32m    except Exception as e:[m
+[32m+[m[32m        logger.error("Error Creating API")[m
+[32m+[m[32m        raise e[m
+[32m+[m[32m    logger.info("API Created")[m
+[32m+[m[32m    return api[m
+[32m+[m
+[32m+[m
+[32m+[m[32mcount = 0[m
+[32m+[m
+[32m+[m[32mcount++[m
+[32m+[m[32mcount++[m
+[32m+[m
+[32m+[m[32mprint(count)[m
+[32m+[m
+[32m+[m
